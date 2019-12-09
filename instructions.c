@@ -94,7 +94,7 @@ void lc3_jsr(uint16_t instr)
 	reg[R_R7] = reg[R_PC];
 	if ( (instr >> 11) & 0x1 )
 	{
-		uint16_t pc_offset_11 = sign_extend(instr & 0x800, 11);
+		uint16_t pc_offset_11 = sign_extend(instr & 0x7FF, 11);
 		reg[R_PC] += pc_offset_11;
 	}
 	else
